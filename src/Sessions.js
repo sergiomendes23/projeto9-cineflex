@@ -71,6 +71,7 @@ const Select = Styled.div`
 const Container = Styled.div`
     display: flex;
     flex-direction: column;
+    margin-bottom: 117px;
 `
 const StartSessions = Styled.div`
     width: 500px;
