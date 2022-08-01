@@ -31,13 +31,15 @@ export default function Sessions(){
                                     <Weekdate>
                                         {hour.weekday} - {hour.date} 
                                     </Weekdate>
-                                    {hour.showtimes.map(showtime => 
-                                    <HourOptions>
-                                        <Link to={`/Seat/${showtime.id}`} style={{textDecoration: 'none'}}>                                            
-                                            <HourSessions>{showtime.name}</HourSessions>
-                                        </Link>
-                                    </HourOptions>
-                                    )}
+                                    <Flex>
+                                        {hour.showtimes.map(showtime => 
+                                        <HourOptions>
+                                            <Link to={`/Seat/${showtime.id}`} style={{textDecoration: 'none'}}>                                            
+                                                <HourSessions>{showtime.name}</HourSessions>
+                                            </Link>
+                                        </HourOptions>
+                                        )}
+                                    </Flex>
                                 </>
                         )
                     })}                
@@ -87,13 +89,19 @@ const Weekdate = Styled.div`
     padding-left: 10px;
 `
 const HourOptions = Styled.div`
+    height: 57px;
     padding-left: 10px;
+
+`
+const Flex = Styled.div`
+    display: flex;
+    justify-content: flex-start;
 
 `
 const HourSessions = Styled.div`
     width: 84px;
     height: 44px;
-    background-color: #E8833A;;
+    background-color: #E8833A;
     border-radius: 3px;
     display: flex;
     align-items: center;
